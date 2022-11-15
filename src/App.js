@@ -8,16 +8,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/">
-          <Login/>
-        </Route>
-        <Route path="/register">
-          <Register/>
-        </Route>
-        <Route path="/dashboard">
-          <Navbar/>
-          <Dashboard/>
-        </Route>
+        <Route exact path="/" component={Login} />
+        
+        
+        <Route path="/register" component={Register} />
+          
+        <Route path="/dashboard" component={Dashboard} />
+       
       </Routes>
     </BrowserRouter>
   );
