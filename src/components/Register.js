@@ -6,7 +6,7 @@ const Register = () => {
     const [firstName, setfirstName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [lastName, setlastName] = useState('');
+    const [confPassword, setconfPassword] = useState('');
     const [msg, setMsg] = useState('');
     const navigate = useNavigate();
  
@@ -15,7 +15,7 @@ const Register = () => {
         try {
             await axios.post('http://localhost:5000/users', {
                 firstName: firstName,
-                lastName:lastName,
+                confPassword:confPassword,
                 email: email,
                 password: password,
                 
@@ -58,7 +58,7 @@ const Register = () => {
                                 <div className="field mt-5">
                                     <label className="label">Confirm Password</label>
                                     <div className="controls">
-                                        <input type="password" className="input" placeholder="******" value={lastName} onChange={(e) => setlastName(e.target.value)} />
+                                        <input type="password" className="input" placeholder="******" value={confPassword} onChange={(e) => setconfPassword(e.target.value)} />
                                     </div>
                                 </div>
                                 <div className="field mt-5">
