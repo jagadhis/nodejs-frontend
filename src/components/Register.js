@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
  
 const Register = () => {
     const [firstName, setfirstName] = useState('');
+    const [lastName,setlastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confPassword, setconfPassword] = useState('');
@@ -14,10 +15,11 @@ const Register = () => {
         e.preventDefault();
         try {
             await axios.post('http://localhost:5000/users', {
-                firstName: firstName,
-                confPassword:confPassword,
+                first_name: firstName,
+                last_name:lastName,
                 email: email,
                 password: password,
+                confPassword:confPassword,
                 
             });
             navigate.push("/");
@@ -41,6 +43,13 @@ const Register = () => {
                                     <div className="controls">
                                         <input type="text" className="input" placeholder="Name"
                                             value={firstName} onChange={(e) => setfirstName(e.target.value)} />
+                                    </div>
+                                </div>
+                                <div className="field mt-5">
+                                    <label className="label">lastName</label>
+                                    <div className="controls">
+                                        <input type="text" className="input" placeholder="Name"
+                                            value={lastName} onChange={(e) => setlastName(e.target.value)} />
                                     </div>
                                 </div>
                                 <div className="field mt-5">
